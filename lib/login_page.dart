@@ -52,11 +52,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     TextFormField(
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: const InputDecoration(labelText: 'Email'),
+                      keyboardType: TextInputType.name,
+                      decoration: const InputDecoration(labelText: 'Nome ou Apelido'),
                       validator: (value) {
-                        if (value!.isEmpty || !value.contains('@')) {
-                          return 'Please enter a valid email address.';
+                        if (value!.isEmpty || value.length < 4 ) {
+                          return 'Por favor escolha um Nome maior';
                         }
                         return null;
                       },
@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       obscureText: true,
                       validator: (value) {
                         if (value!.isEmpty || value.length < 7) {
-                          return 'Password must be at least 7 characters long.';
+                          return 'Sua senha deve ter mais 7 caracteres.';
                         }
                         return null;
                       },
